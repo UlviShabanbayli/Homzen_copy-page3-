@@ -1,0 +1,29 @@
+@mixin Flex(
+  $justify: null,
+  $items: null,
+  $wrap: null,
+  $gap: null,
+  $direction: null
+) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $items;
+  flex-wrap: $wrap;
+  gap: $gap;
+  flex-direction: $direction;
+}
+
+@mixin Grid(
+  $justify: null,
+  $items: null,
+  $columns: null,
+  $rows: null,
+  $gap: null
+) {
+  display: grid;
+  justify-content: $justify;
+  align-items: $items;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+  gap: $gap;
+}
