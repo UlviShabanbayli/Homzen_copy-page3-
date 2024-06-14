@@ -1,0 +1,31 @@
+@use "../../utills/variables" as *;
+@use "../../utills/mixins" as *;
+
+.hero {
+  margin-top: 70px;
+  background-image: url("../../../../../src/img/hero-pic.jpeg");
+  background-attachment: fixed;
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__container {
+    @include Grid($columns: repeat(12, 1fr), $gap: 16px, $items: center);
+
+    &-left {
+      grid-column: 1 / span 8;
+
+      @include Flex($direction: column, $gap: 24px, $items: flex-start);
+
+      h1,
+      p {
+        padding-right: 50%;
+      }
+    }
+
+    &-form {
+      grid-column: 9 / -1;
+    }
+  }
+}

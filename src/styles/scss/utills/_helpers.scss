@@ -1,7 +1,31 @@
+@use "./variables" as *;
+
+.container {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .arrow__down-rigth {
   width: 12px;
   height: 12px;
-  // opacity: 0;
-  position: absolute;
-  transform: translateY(2px);
+}
+
+.arrow-down {
+  width: 16px;
+  height: 16px;
+}
+
+.current {
+  color: $primary-color !important;
+}
+
+.btn {
+  background-color: $primary-color;
+  color: $white;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $primary-color-hover;
+  }
 }

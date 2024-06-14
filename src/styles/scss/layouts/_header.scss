@@ -1,0 +1,190 @@
+@use "../utills/variables" as *;
+@use "../utills/mixins" as *;
+
+.header {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  top: 0;
+  padding: 0 30px;
+  border-bottom: $border-default;
+  background-color: $white;
+  &__container {
+    @include Flex($justify: space-between, $items: center);
+
+    &-logo {
+      max-width: 174px;
+
+      > a {
+        display: inline-block;
+        > img {
+          width: 100%;
+        }
+      }
+    }
+    &-nav {
+      > div {
+        > ul {
+          @include Flex($gap: 55px, $items: center);
+
+          > li {
+            position: relative;
+            @include Flex($gap: 6px, $items: center);
+
+            &:hover {
+              > ul {
+                display: block;
+                animation: menuFadeIn 0.3s linear 1 forwards;
+
+                > li:last-child {
+                  padding-bottom: 24px;
+                }
+              }
+            }
+
+            > svg {
+              cursor: pointer;
+            }
+            > a {
+              padding: 27px 0;
+              color: $link-color;
+              position: relative;
+              font-weight: 600;
+              &:hover::after {
+                width: 100%;
+              }
+
+              &::after {
+                content: "";
+                position: absolute;
+                bottom: 20px;
+                left: 0;
+                background-color: $primary-color;
+                width: 0;
+                height: 2px;
+                transition: all 0.3s ease-in-out;
+              }
+            }
+
+            > ul {
+              background-color: $white;
+
+              padding-top: 16px;
+              width: max-content;
+              display: none;
+              animation: menuFadeOut 0.3s linear 1 forwards;
+              border: $border-default;
+              border-radius: 0 0 20px 20px;
+              position: absolute;
+              bottom: 0;
+              transform: translateY(100%) translateX(-27px);
+              transition: all 0.3s;
+              cursor: pointer;
+
+              > li {
+                @include Flex($items: center);
+                border-bottom: $border-default;
+                position: relative;
+                padding: 24px 72px 24px 16px;
+
+                &:hover {
+                  > a {
+                    transform: translateX(24px);
+                    color: $primary-color;
+                  }
+                  > svg {
+                    opacity: 1;
+                  }
+                }
+                > a {
+                  display: block;
+                  transition: all 0.3s;
+                  font-weight: 600;
+                  color: $menu_link-color;
+                }
+                > svg {
+                  position: absolute;
+                  opacity: 0;
+                  color: $primary-color;
+                  transition: all 0.3s;
+                }
+              }
+              > li:last-child {
+                border-bottom: none;
+                padding-bottom: 4px;
+                transition: all 0.3s;
+              }
+            }
+          }
+
+          li:not(:first-child) {
+            > ul {
+              width: 270px;
+            }
+          }
+        }
+      }
+    }
+
+    &-right {
+      @include Flex($items: center, $gap: 12px);
+
+      > div:first-child {
+        > ul {
+          @include Flex($items: center, $gap: 4px);
+          > li {
+            color: $link-color;
+            > a {
+              color: inherit;
+              transition: all 0.3s ease-in-out;
+              font-weight: 600;
+
+              &:hover {
+                color: $primary-color;
+              }
+            }
+          }
+        }
+      }
+
+      > div:last-child {
+        > a {
+          display: inline-block;
+          padding: 12px;
+          font-weight: 700;
+          border-radius: $border-radius-btn;
+        }
+      }
+    }
+  }
+}
+
+@keyframes menuFadeIn {
+  0% {
+    opacity: 0;
+    display: none;
+    padding-top: 16px;
+  }
+
+  20% {
+    display: block;
+  }
+
+  100% {
+    opacity: 1;
+    padding-top: 0;
+  }
+}
+@keyframes menuFadeOut {
+  0% {
+    opacity: 1;
+    display: block;
+    padding-top: 0;
+  }
+
+  100% {
+    opacity: 0;
+    padding-top: 16px;
+    // display: none;
+  }
+}
