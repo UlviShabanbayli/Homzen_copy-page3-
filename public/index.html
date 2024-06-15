@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
+    <script defer src="../src/js/script.js"></script>
+
     <link rel="stylesheet" href="../src/styles/css/styles.min.css" />
   </head>
   <body>
@@ -705,8 +707,13 @@
         <div class="container hero__container">
           <div class="hero__container-left">
             <h1>
-              Indulge in Your
-              <span>Safe House</span>
+              <span class="heading">
+                Indulge in Your
+                <div>
+                  <span class="safe">Safe House</span>
+                  <span class="salam hidden">Sanctuary</span>
+                </div>
+              </span>
             </h1>
             <p>
               Discover your private oasis at Homeya, where every corner, from
@@ -721,14 +728,7 @@
               <li><a href="#">For sale</a></li>
             </ul>
             <form action="">
-              <label
-                for="keyword"
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  align-items: start;
-                "
-              >
+              <label class="inputs_l" for="keyword">
                 Keyword
                 <input
                   name="keyword"
@@ -737,16 +737,7 @@
                   placeholder="Search Keyword"
                 />
               </label>
-              <label
-                for="location"
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  align-items: start;
-                  position: relative;
-                  width: max-content;
-                "
-              >
+              <label for="location" class="inputs_l">
                 Location
                 <input
                   id="location"
@@ -759,15 +750,15 @@
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke-width="2"
-                  width="12px"
-                  height="12px"
+                  width="16px"
+                  height="16px"
                   stroke="currentColor"
                   class="size-6"
                   style="
                     position: absolute;
                     bottom: 0;
                     right: 0;
-                    transform: translateY(-30%) translateX(-4px);
+                    transform: translateY(-100%) translateX(-4px);
                   "
                 >
                   <path
@@ -794,6 +785,7 @@
                     stroke-width="1.5"
                     stroke="currentColor"
                     class="size-6"
+                    style="width: 16px; height: 16px"
                   >
                     <path
                       stroke-linecap="round"

@@ -2,7 +2,7 @@
 @use "../../utills/mixins" as *;
 
 .hero {
-  margin-top: 70px;
+  margin-top: 80px;
   background-image: url("../../../../../src/img/hero-pic.jpeg");
   background-attachment: fixed;
   position: relative;
@@ -20,12 +20,143 @@
 
       h1,
       p {
-        padding-right: 50%;
+        padding-right: 45%;
+      }
+
+      h1 {
+        font-size: 56px;
+        line-height: 72px;
+        font-weight: 500;
+        height: 120px;
+        > span {
+          position: relative;
+
+          > div {
+            position: relative;
+            width: 76%;
+            > span {
+              position: absolute;
+            }
+
+            &::after {
+              position: absolute;
+              content: "|";
+              right: 0;
+              top: -3px;
+              font-weight: 500;
+              z-index: 100;
+              background-color: #f4f4f4;
+              color: $primary-color;
+              width: 0;
+
+              animation: width 4s ease-in-out infinite forwards;
+            }
+          }
+        }
+      }
+
+      > p {
+        font-size: 20px;
+        color: $menu_link-color;
+        line-height: 28px;
+      }
+
+      > a {
+        padding: 16px 40px;
+        font-size: 16px;
+        font-weight: 700;
+        font-family: "DM Sans", sans-serif;
+        border-radius: $border-radius-btn;
       }
     }
 
     &-form {
       grid-column: 9 / -1;
+      margin-top: 36px;
+
+      > ul {
+        @include Flex($gap: 6px);
+
+        > li {
+          > a {
+            display: inline-block;
+            padding: 24px 36px;
+            background: $white;
+            text-transform: uppercase;
+            color: $link-color;
+          }
+        }
+      }
+
+      > form {
+        background-color: $white;
+        padding: 24px 30px 30px;
+
+        @include Flex($direction: column, $gap: 24px, $items: flex-start);
+        > .inputs_l {
+          font-size: 14px;
+          width: 100%;
+          position: relative;
+          text-transform: uppercase;
+
+          @include Flex($direction: column, $gap: 12px, $items: flex-start);
+
+          > input {
+            outline: none;
+            border: $border-default;
+            border-radius: $border-radius-btn;
+            width: 100%;
+            font-size: 18px;
+            padding: 10px 40px 10px 16px;
+
+            &:focus {
+              border: 1px solid $primary-color;
+            }
+          }
+        }
+
+        > label:has(div) {
+          width: 100%;
+          font-size: 14px;
+          text-transform: uppercase;
+          @include Flex($direction: column, $gap: 12px, $items: flex-start);
+          > div {
+            width: 100%;
+            position: relative;
+            background-color: red;
+            padding: 10px 16px;
+            border-radius: $border-radius-btn;
+            @include Flex($items: center, $justify: space-between);
+
+            > p {
+              font-size: 18px;
+              text-transform: capitalize;
+            }
+          }
+        }
+      }
     }
+  }
+}
+
+@keyframes width {
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+@keyframes width2 {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
   }
 }
