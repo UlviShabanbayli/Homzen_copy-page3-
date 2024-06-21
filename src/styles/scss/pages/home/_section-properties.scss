@@ -1,0 +1,142 @@
+@use "../../utills/variables" as *;
+@use "../../utills/mixins" as *;
+
+.properties {
+  padding-block: 100px;
+
+  &__container {
+    &-top {
+      @include Flex($justify: space-between, $items: center);
+
+      > div:first-child {
+        @include Flex($gap: 12px, $direction: column);
+      }
+
+      > div:last-child {
+        @include Flex($gap: 8px, $items: center);
+        cursor: pointer;
+
+        &:hover > svg {
+          animation: arrowAnimation 0.4s linear 1;
+        }
+        > a {
+          position: relative;
+          color: $link-color;
+          padding-bottom: 5px;
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: $primary-color;
+            width: 100%;
+            height: 2px;
+          }
+        }
+
+        > svg {
+          width: 16px;
+          height: 16px;
+          stroke: $primary-color;
+        }
+      }
+    }
+
+    &-bottom {
+      margin-top: 40px;
+
+      @include Grid($columns: repeat(3, 1fr), $gap: 24px);
+
+      &__item {
+        @include Flex($items: center, $gap: 24px);
+
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #f7f7f7;
+        box-shadow: 0px 2px 2px 0px rgba(28, 36, 51, 0.1019607843);
+        transition: all 0.3s ease;
+
+        > div:first-child {
+          overflow: hidden;
+          > img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            height: auto;
+            transform: scale(1);
+            vertical-align: middle;
+            transition: transform 0.3s cubic-bezier(0, 0, 0.44, 1.18);
+          }
+        }
+
+        > div:last-child {
+          @include Flex($direction: column, $gap: 8px);
+          > h6 {
+            font-size: 24px;
+            font-weight: 600;
+            > a {
+              transition: all 0.3s ease;
+              color: $link-color;
+              transition: all 0.3s ease-in-out;
+            }
+          }
+          > p {
+            color: $link-color;
+            transition: all 0.3s ease-in-out;
+          }
+
+          > div {
+            @include Flex($gap: 8px);
+            > a {
+              color: $link-color;
+              position: relative;
+              font-size: 14px;
+              transition: all 0.3s ease-in-out;
+
+              &::after {
+                content: "";
+                position: absolute;
+                bottom: -2px;
+                right: 0;
+                left: auto;
+                background-color: $white;
+                width: 0%;
+                height: 2px;
+                animation: underlineAnimate2 0.4s linear 1 forwards;
+              }
+            }
+            > svg {
+              width: 16px;
+              height: 16px;
+              stroke: $primary-color;
+              transition: all 0.3s ease-in-out 0s;
+            }
+          }
+        }
+
+        &:hover {
+          background-color: $primary-color;
+        }
+
+        &:hover > div:first-child > img {
+          transform: scale(1.1);
+        }
+
+        &:hover > div:last-child > h6 > a,
+        &:hover > div:last-child > p,
+        &:hover > div:last-child > div > a {
+          color: $white;
+        }
+
+        &:hover > div:last-child > div > a::after {
+          animation: underlineAnimate 0.4s linear 1 forwards;
+        }
+
+        &:hover > div:last-child > div > svg {
+          stroke: $white;
+          animation: arrowAnimation 0.3s linear 1;
+        }
+      }
+    }
+  }
+}

@@ -20,7 +20,7 @@
 
       h1,
       p {
-        padding-right: 45%;
+        padding-right: 43%;
       }
 
       h1 {
@@ -29,14 +29,9 @@
         font-weight: 500;
         height: 120px;
         > span {
-          position: relative;
-
           > div {
             position: relative;
-            width: 76%;
-            > span {
-              position: absolute;
-            }
+            width: max-content;
 
             &::after {
               position: absolute;
@@ -49,7 +44,8 @@
               color: $primary-color;
               width: 0;
 
-              animation: width 4s ease-in-out infinite forwards;
+              animation: width 4s cubic-bezier(1, 0.01, 0.77, 0.47) infinite
+                forwards;
             }
           }
         }
@@ -72,18 +68,25 @@
 
     &-form {
       grid-column: 9 / -1;
-      margin-top: 36px;
+      padding: 75px 20px;
 
       > ul {
         @include Flex($gap: 6px);
 
         > li {
           > a {
+            border-radius: 12px 12px 0 0;
             display: inline-block;
-            padding: 24px 36px;
-            background: $white;
+            padding: 20px 28px;
+            font-weight: 600;
+            background-color: $light-gray;
             text-transform: uppercase;
             color: $link-color;
+            transition: all 0.3s;
+
+            &:hover {
+              background-color: $white;
+            }
           }
         }
       }
@@ -91,10 +94,12 @@
       > form {
         background-color: $white;
         padding: 24px 30px 30px;
+        border-radius: 0 12px 12px;
 
-        @include Flex($direction: column, $gap: 24px, $items: flex-start);
+        @include Flex($direction: column, $gap: 28px, $items: flex-start);
         > .inputs_l {
           font-size: 14px;
+          font-weight: 700;
           width: 100%;
           position: relative;
           text-transform: uppercase;
@@ -113,6 +118,9 @@
               border: 1px solid $primary-color;
             }
           }
+          > svg {
+            margin-right: 12px;
+          }
         }
 
         > label:has(div) {
@@ -123,9 +131,10 @@
           > div {
             width: 100%;
             position: relative;
-            background-color: red;
+            border: $border-default;
             padding: 10px 16px;
             border-radius: $border-radius-btn;
+            cursor: pointer;
             @include Flex($items: center, $justify: space-between);
 
             > p {
@@ -134,29 +143,32 @@
             }
           }
         }
+
+        .advanced {
+          @include Flex($gap: 12px, $items: center);
+
+          > svg {
+            width: 32px;
+            height: 32px;
+          }
+
+          > a {
+            color: $link-color;
+            font-weight: 900;
+            font-size: 16px;
+          }
+        }
+
+        > button {
+          width: 100%;
+          padding: 15px 20px;
+          font-size: 16px;
+          font-weight: 700;
+          border: none;
+          border-radius: $border-radius-btn;
+          cursor: pointer;
+        }
       }
     }
-  }
-}
-
-@keyframes width {
-  0% {
-    width: 0;
-  }
-
-  50% {
-    width: 100%;
-  }
-
-  100% {
-    width: 0;
-  }
-}
-@keyframes width2 {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 0;
   }
 }

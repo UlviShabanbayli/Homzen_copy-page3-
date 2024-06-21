@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+::after,
+::before {
+  box-sizing: border-box;
+}
+
 body,
 button {
   font-family: "Josefin Sans", sans-serif;

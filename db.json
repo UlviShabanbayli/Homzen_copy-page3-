@@ -1,0 +1,63 @@
+{
+  "propertiesByCities": [
+    {
+      "picName": "lo-sm-1.jpg",
+      "heading": "Dallas",
+      "count": 263
+    },
+    {
+      "picName": "lo-sm-2.jpg",
+      "heading": "Atlanta",
+      "count": 275
+    },
+    {
+      "picName": "lo-sm-3.jpg",
+      "heading": "Orlando",
+      "count": 256
+    },
+    {
+      "picName": "lo-sm-4.jpg",
+      "heading": "Miami",
+      "count": 312
+    },
+    {
+      "picName": "lo-sm-5.jpg",
+      "heading": "Houston",
+      "count": 237
+    },
+    {
+      "picName": "lo-sm-6.jpg",
+      "heading": "Phoenix",
+      "count": 221
+    },
+    {
+      "picName": "lo-sm-7.jpg",
+      "heading": "Seattle",
+      "count": 188
+    },
+    {
+      "picName": "lo-sm-8.jpg",
+      "heading": "Denver",
+      "count": 193
+    },
+    {
+      "picName": "lo-sm-9.jpg",
+      "heading": "Austin",
+      "count": 309
+    }
+  ],
+
+  "featured": [
+    {
+      "picName": "house-1.jpg",
+      "design": "studio",
+      "name": "Casa Lomas De Machalí Machas",
+      "address": "33 Maple Street, San Francisco, California",
+      "bedroom": 3,
+      "bathroom": 2,
+      "sqft": 600,
+      "agent": "Arlene McCoy",
+      "price": 7250
+    }
+  ]
+}

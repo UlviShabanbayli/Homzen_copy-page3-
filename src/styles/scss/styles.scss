@@ -2,10 +2,12 @@
 @forward "./utills/variables";
 @forward "./utills/helpers";
 @forward "./utills/mixins";
-@forward "./layouts/grid";
+@forward "./utills/keyframes";
 
 @forward "./layouts/header";
 @forward "./pages/home/section-hero";
+@forward "./pages/home/section-properties";
+@forward "./pages/home/section-featured";
 
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");

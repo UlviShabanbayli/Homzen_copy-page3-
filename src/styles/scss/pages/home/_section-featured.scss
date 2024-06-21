@@ -1,0 +1,67 @@
+@use "../../utills/variables" as *;
+@use "../../utills/mixins" as *;
+
+.featured {
+  margin-bottom: 100px;
+  &__container {
+    &-top {
+      text-align: center;
+      > h4 {
+        margin-top: 12px;
+      }
+    }
+    &-bottom {
+      @include Flex($direction: column, $gap: 20px, $items: center);
+      margin-top: 20px;
+      > ul {
+        @include Flex($gap: 12px);
+        > li {
+          > a {
+            display: inline-block;
+            background-color: #f7f7f7;
+            border-radius: 4px;
+            padding: 8px 24px;
+            color: $link-color;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              background-color: $primary-color;
+              color: $white;
+            }
+          }
+        }
+      }
+
+      &__grid {
+        @include Grid($columns: repeat(3, 1fr), $gap: 30px);
+
+        &-item {
+          border-radius: 12px;
+          border: 1px solid #e4e4e4;
+          overflow: hidden;
+          > div:first-child {
+            > div:first-child {
+              position: relative;
+              > img {
+                width: 100%;
+                object-fit: cover;
+              }
+              > div:nth-child(2) {
+                position: absolute;
+                left: 0;
+                top: 0;
+              }
+              > div:last-child {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

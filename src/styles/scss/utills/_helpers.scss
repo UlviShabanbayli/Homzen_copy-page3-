@@ -4,6 +4,7 @@
   max-width: 1320px;
   width: 100%;
   margin: 0 auto;
+  padding-inline: 15px;
 }
 
 .arrow__down-rigth {
@@ -32,4 +33,37 @@
 
 .hidden {
   display: none;
+}
+
+.active-btn {
+  background-color: #fff !important;
+}
+
+section:not(.hero) {
+  transition: all 0.8s;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+section.inview {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.3s;
+}
+
+.subheading {
+  color: $primary-color;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.heading {
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.active-tab {
+  background-color: $primary-color !important;
+  color: $white !important;
 }

@@ -1,0 +1,79 @@
+@keyframes menuFadeIn {
+  0% {
+    opacity: 0;
+    display: none;
+    padding-top: 16px;
+  }
+
+  20% {
+    display: block;
+  }
+
+  100% {
+    opacity: 1;
+    padding-top: 0;
+  }
+}
+
+@keyframes menuFadeOut {
+  0% {
+    opacity: 1;
+    display: block;
+    padding-top: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes width {
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes arrowAnimation {
+  33% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  66% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes underlineAnimate {
+  0% {
+    left: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes underlineAnimate2 {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 0;
+  }
+}
