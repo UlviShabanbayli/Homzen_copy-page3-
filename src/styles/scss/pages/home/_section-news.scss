@@ -1,0 +1,105 @@
+@use "../../utills/variables" as *;
+@use "../../utills/mixins" as *;
+
+.news {
+  padding-block: 100px;
+
+  &__container {
+    &-top {
+      > h4 {
+        margin-top: 16px;
+      }
+    }
+    &-bottom {
+      margin-top: 40px;
+
+      @include Grid($columns: repeat(4, 1fr), $gap: 30px);
+
+      &__item {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+
+        &::after {
+          position: absolute;
+          content: "";
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 40%;
+          background-image: linear-gradient(
+            180deg,
+            rgba(11, 33, 50, 0) 0%,
+            rgba(11, 33, 50, 0.9) 100%
+          );
+          opacity: 0.7;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+          &::after {
+            opacity: 1;
+            height: 100%;
+          }
+
+          > img {
+            transform: scale(1.1);
+          }
+        }
+        > img {
+          width: 100%;
+          display: block;
+          transition: all 0.3s ease-in-out;
+        }
+
+        > div {
+          position: absolute;
+          bottom: 0;
+          padding: 16px;
+          color: $white;
+          z-index: 10;
+
+          @include Flex($direction: column, $gap: 12px, $items: flex-start);
+
+          > h5 {
+            background-color: $primary-color;
+            padding: 6px 12px;
+            font-size: 12px;
+          }
+
+          > a {
+            color: $white;
+            transition: all 0.3s ease;
+            font-size: 20px;
+            line-height: 28px;
+
+            &:hover {
+              color: $primary-color;
+            }
+          }
+
+          > div {
+            @include Flex($items: center, $gap: 12px);
+            span {
+              font-size: 14px;
+              position: relative;
+            }
+
+            span:last-child {
+              &::before {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translate(-6px, -50%);
+                height: 4px;
+                width: 1px;
+                content: "";
+                background-color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

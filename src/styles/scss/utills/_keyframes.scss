@@ -77,3 +77,20 @@
     width: 0;
   }
 }
+
+@keyframes searchingIcon {
+  33% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  66% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

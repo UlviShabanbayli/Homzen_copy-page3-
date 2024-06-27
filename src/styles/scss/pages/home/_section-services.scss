@@ -1,0 +1,86 @@
+@use "../../utills/variables" as *;
+@use "../../utills/mixins" as *;
+
+.services {
+  padding-block: 100px;
+
+  &__container {
+    &-top {
+      text-align: center;
+      > h4 {
+        margin-top: 16px;
+      }
+    }
+
+    &-bottom {
+      @include Flex($gap: 30px);
+      margin-top: 32px;
+
+      &__item {
+        @include Flex(
+          $direction: column,
+          $gap: 24px,
+          $items: center,
+          $justify: center
+        );
+        flex: 1;
+        padding: 40px 30px;
+
+        border-radius: 16px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: #f7f7f7;
+
+          > div:first-child {
+            transform: rotateY(360deg);
+          }
+
+          > div:last-child {
+            > a {
+              background-color: $primary-color;
+              color: $white !important;
+              border-color: $primary-color !important;
+            }
+          }
+        }
+
+        > div:first-child {
+          transition: all 0.6s ease-in-out;
+          > i {
+            font-size: 56px;
+          }
+        }
+
+        > div:last-child {
+          @include Flex(
+            $direction: column,
+            $items: center,
+            $justify: center,
+            $gap: 16px
+          );
+          text-align: center;
+
+          > h6 {
+            font-size: 24px;
+            font-weight: 600;
+          }
+
+          > p {
+            color: #5c6368;
+          }
+
+          > a {
+            display: inline-block;
+            padding: 12px 20px;
+            border: 1px solid $link-color;
+            color: $link-color;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}

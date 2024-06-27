@@ -1,0 +1,163 @@
+@use "../../utills/variables" as *;
+@use "../../utills/mixins" as *;
+
+.testimonials {
+  padding-bottom: 100px;
+  &__container {
+    @include Grid($columns: 2fr 3fr);
+
+    &-left {
+      border-radius: 16px 0 0 16px;
+      overflow: hidden;
+      &:hover {
+        > div:first-child::after {
+          height: 100%;
+          opacity: 1;
+        }
+      }
+      > div:first-child {
+        position: relative;
+
+        &::after {
+          position: absolute;
+          content: "";
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 40%;
+          background-image: linear-gradient(
+            180deg,
+            rgba(11, 33, 50, 0) 0%,
+            rgba(11, 33, 50, 0.9) 100%
+          );
+          opacity: 0.7;
+          transition: all 0.5s ease-in-out;
+        }
+
+        div {
+          img {
+            width: 100%;
+            display: block;
+          }
+        }
+        h5 {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transform: translate(24px, -24px);
+          z-index: 10;
+          a {
+            font-size: 32px;
+            color: $white;
+            transition: all 0.3s ease;
+
+            &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+
+      > div:last-child {
+        padding: 30px 40px 40px;
+        background-color: #171e2d;
+
+        @include Flex($direction: column, $gap: 20px, $items: flex-start);
+
+        > p {
+          color: $white;
+          font-size: 18px;
+          line-height: 28px;
+        }
+
+        > a {
+          display: block;
+          padding: 11px 32px;
+          border-radius: 4px;
+        }
+      }
+    }
+
+    &-right {
+      padding: 60px 60px 30px;
+      background-color: #f7f7f7;
+      border-radius: 0 16px 16px 0;
+      @include Flex($direction: column);
+
+      > div:first-child {
+        @include Flex($direction: column, $items: center, $justify: center);
+        > div:first-child {
+          cursor: not-allowed;
+          @include Flex(
+            $direction: column,
+            $items: center,
+            $justify: center,
+            $gap: 16px
+          );
+
+          ul {
+            @include Flex();
+            color: #f3d119;
+            font-size: 22px;
+          }
+
+          h5 {
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 40px;
+            text-align: center;
+          }
+        }
+        > div:last-child {
+          width: 100%;
+          margin-top: 24px;
+          @include Flex($justify: center, $gap: 16px);
+
+          > div {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #a2abaf;
+          }
+
+          > .current {
+            background-color: $primary-color;
+            position: relative;
+            @include Flex($items: center, $justify: center);
+            &::after {
+              content: "";
+              position: absolute;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              border: 1px solid $primary-color;
+            }
+          }
+        }
+      }
+
+      > .swiper {
+        margin-top: auto;
+        padding-top: 40px;
+        border-top: 1px solid $light-gray;
+        overflow: hidden;
+
+        @include Flex($gap: 40px);
+
+        > div {
+          > svg {
+            cursor: pointer;
+            path {
+              transition: all 0.3s ease;
+            }
+            &:hover {
+              path {
+                fill: red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

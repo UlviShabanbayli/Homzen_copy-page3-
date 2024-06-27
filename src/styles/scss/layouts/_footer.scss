@@ -1,0 +1,174 @@
+@use "../utills/variables" as *;
+@use "../utills/mixins" as *;
+
+.footer {
+  padding-top: 60px;
+  background-image: url("https://themesflat.co/html/homzen/images/banner/banner-footer.png");
+  background-color: #161e2d;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__container {
+    &-top {
+      @include Flex($justify: space-between, $items: center);
+      padding-bottom: 30px;
+      border-bottom: 1px solid #2d323f;
+
+      > div:first-child {
+        > a {
+          display: block;
+          width: 174px;
+          > img {
+            width: 100%;
+          }
+        }
+      }
+
+      > div:last-child {
+        @include Flex($items: center, $gap: 16px);
+
+        > p {
+          color: $white;
+        }
+
+        > ul {
+          @include Flex($gap: 12px, $items: center);
+
+          > li {
+            > a {
+              display: block;
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              background-color: rgba(45, 50, 63, 0.8);
+              transition: all 0.3s ease;
+
+              @include Flex($items: center, $justify: center);
+
+              i {
+                color: $white;
+                font-size: 18px;
+              }
+            }
+
+            &:hover {
+              > a {
+                background-color: $primary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-middle {
+      border-bottom: 1px solid #2d323f;
+      padding-block: 40px;
+      @include Grid($columns: 2fr 1fr 1fr 2fr, $gap: 30px);
+
+      color: $white;
+
+      > div:first-child {
+        @include Flex($direction: column, $gap: 16px);
+        > p:first-child {
+          color: #80888e;
+          font-weight: 400;
+          font-size: 14px;
+        }
+
+        > p:not(:first-child) {
+          font-size: 14px;
+          i {
+            color: #80888e;
+          }
+        }
+      }
+
+      > div:nth-child(2) {
+        @include Flex($direction: column, $gap: 12px);
+
+        > h6 {
+          font-size: 16px;
+        }
+        > ul {
+          @include Flex($direction: column, $gap: 12px);
+        }
+      }
+
+      > div:nth-child(3) {
+        @include Flex($direction: column, $gap: 12px);
+
+        > h6 {
+          font-size: 16px;
+        }
+        > ul {
+          @include Flex($direction: column, $gap: 12px);
+        }
+      }
+
+      > div:last-child {
+        @include Flex($direction: column, $gap: 16px);
+
+        > h6 {
+          font-size: 16px;
+        }
+
+        > p {
+          color: #80888e;
+        }
+
+        > form {
+          @include Flex($items: center);
+          div {
+            @include Flex($items: center, $justify: center, $gap: 12px);
+            width: 100%;
+            border-bottom: 1px solid #80888e;
+            > i {
+              color: #80888e;
+            }
+            input {
+              border: none;
+              outline: none;
+              background-color: transparent;
+              color: white;
+              padding: 12px;
+              width: 80%;
+            }
+            button {
+              border: none;
+              outline: none;
+              background-color: transparent;
+
+              i {
+                color: #80888e;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-bottom {
+      padding: 12px;
+      @include Flex($justify: space-between, $items: center);
+
+      > p {
+        color: #80888e;
+      }
+
+      > ul {
+        @include Flex($gap: 16px);
+        li {
+          a {
+            color: #80888e;
+            transition: all 0.3s ease;
+
+            &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+@use "../../utills/variables" as *;
+@use "../../utills/mixins" as *;
+
+.searching {
+  background-color: #171e2d;
+  padding-block: 80px;
+
+  &__container {
+    &-top {
+      h4,
+      p {
+        color: $white;
+        text-align: center;
+      }
+      h4 {
+        margin-top: 16px;
+      }
+    }
+
+    &-bottom {
+      margin-top: 40px;
+      &__wrapper {
+        @include Flex($gap: 40px);
+        overflow: hidden;
+
+        &-item {
+          @include Flex(
+            $direction: column,
+            $gap: 16px,
+            $justify: center,
+            $items: center
+          );
+          flex-shrink: 0;
+          width: 226px;
+          padding: 30px 24px 24px 24px;
+          background-color: #2f3543;
+          border-radius: 12px;
+          position: relative;
+          overflow: hidden;
+
+          &::after {
+            position: absolute;
+            content: "";
+            background-color: $white;
+            width: 100%;
+            height: 0;
+            transition: all 0.3s ease;
+            bottom: 0;
+          }
+
+          &:hover::after {
+            height: 100%;
+            top: 0;
+          }
+
+          &:hover {
+            > div {
+              background-color: $primary-color;
+
+              > svg {
+                color: $white;
+                animation: searchingIcon 0.3s ease 1 forwards;
+              }
+            }
+
+            > h5,
+            p {
+              color: black;
+            }
+          }
+
+          > div {
+            background-color: $white;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 10;
+
+            @include Flex($items: center, $justify: center);
+
+            > svg {
+              width: 44px;
+              height: 44px;
+              transition: all 0.3s ease;
+            }
+          }
+
+          > h5 {
+            font-size: 24px;
+            color: $white;
+            z-index: 10;
+            transition: all 0.3s ease;
+          }
+          > p {
+            color: $white;
+            z-index: 10;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+
+      &__btns {
+        width: 100%;
+        margin-top: 24px;
+        @include Flex($justify: center, $gap: 16px);
+
+        > div {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: $white;
+        }
+
+        > .current {
+          background-color: $primary-color;
+          position: relative;
+          @include Flex($items: center, $justify: center);
+          &::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid $primary-color;
+          }
+        }
+      }
+    }
+  }
+}

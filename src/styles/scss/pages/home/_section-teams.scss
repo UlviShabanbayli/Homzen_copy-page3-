@@ -1,0 +1,150 @@
+@use "../../utills/variables" as *;
+@use "../../utills/mixins" as *;
+
+.teams {
+  padding-block: 100px;
+  background-color: #f7f7f7;
+
+  &__container {
+    &-top {
+      @include Flex($justify: space-between, $items: center);
+      h4 {
+        margin-top: 16px;
+      }
+
+      > button {
+        border: none;
+        cursor: pointer;
+        padding: 12px 16px;
+        border-radius: 8px;
+      }
+    }
+
+    &-bottom {
+      margin-top: 40px;
+
+      @include Grid($columns: repeat(2, 1fr), $gap: 40px);
+
+      &__item {
+        border-radius: 16px;
+        overflow: hidden;
+        @include Flex();
+
+        &:hover {
+          > div:first-child {
+            &::after {
+              opacity: 1;
+            }
+
+            img {
+              transform: scale(1.1);
+            }
+            > ul {
+              opacity: 1;
+              bottom: 16px;
+            }
+          }
+
+          > div:last-child {
+            > a {
+              background-color: $primary-color;
+              color: $white;
+              border-color: $primary-color;
+            }
+          }
+        }
+
+        > div:first-child {
+          position: relative;
+          min-width: 320px;
+          min-height: 320px;
+          overflow: hidden;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            transition: all 0.3s ease;
+          }
+
+          > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: all 0.3s ease;
+          }
+
+          > ul {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 16px;
+            background-color: $white;
+            border-radius: 8px;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 10;
+
+            @include Flex($items: center);
+
+            > li {
+              padding-inline: 16px;
+              > a {
+                i {
+                  font-size: 18px;
+                  color: #5b6367;
+                  transition: all 0.3s ease;
+
+                  &:hover {
+                    color: $primary-color;
+                  }
+                }
+              }
+              button {
+                padding: 4px 6px;
+                border: none;
+                cursor: pointer;
+                border-radius: 4px;
+              }
+            }
+
+            > li:not(:last-child) {
+              border-right: 1px solid $light-gray;
+            }
+          }
+        }
+
+        > div:last-child {
+          flex: 1;
+          padding: 30px;
+          background-color: $white;
+          @include Flex($direction: column, $gap: 16px, $items: flex-start);
+          > h6 {
+            font-size: 24px;
+            font-weight: 600;
+          }
+          > p {
+            font-weight: 400;
+            color: #5b6367;
+          }
+          > a {
+            display: block;
+            padding: 11px 32px;
+            border: 1px solid $link-color;
+            border-radius: 8px;
+            color: $link-color;
+            margin-top: auto;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+}

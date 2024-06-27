@@ -3,50 +3,58 @@
     {
       "picName": "lo-sm-1.jpg",
       "heading": "Dallas",
-      "count": 263
+      "count": 263,
+      "id": "8837"
     },
     {
       "picName": "lo-sm-2.jpg",
       "heading": "Atlanta",
-      "count": 275
+      "count": 275,
+      "id": "5ae7"
     },
     {
       "picName": "lo-sm-3.jpg",
       "heading": "Orlando",
-      "count": 256
+      "count": 256,
+      "id": "8e78"
     },
     {
       "picName": "lo-sm-4.jpg",
       "heading": "Miami",
-      "count": 312
+      "count": 312,
+      "id": "49a9"
     },
     {
       "picName": "lo-sm-5.jpg",
       "heading": "Houston",
-      "count": 237
+      "count": 237,
+      "id": "974b"
     },
     {
       "picName": "lo-sm-6.jpg",
       "heading": "Phoenix",
-      "count": 221
+      "count": 221,
+      "id": "36c2"
     },
     {
       "picName": "lo-sm-7.jpg",
       "heading": "Seattle",
-      "count": 188
+      "count": 188,
+      "id": "79fd"
     },
     {
       "picName": "lo-sm-8.jpg",
       "heading": "Denver",
-      "count": 193
+      "count": 193,
+      "id": "5a43"
     },
     {
       "picName": "lo-sm-9.jpg",
       "heading": "Austin",
-      "count": 309
+      "count": 309,
+      "id": "c0c0"
     }
   ],
-
   "featured": [
     {
       "picName": "house-1.jpg",
@@ -56,8 +64,119 @@
       "bedroom": 3,
       "bathroom": 2,
       "sqft": 600,
+      "agentImg": "avt-6.jpg",
       "agent": "Arlene McCoy",
-      "price": 7250
+      "price": 7250,
+      "isForSale": true,
+      "id": "6c67"
+    },
+    {
+      "picName": "house-2.jpg",
+      "design": "apartment",
+      "name": "Villa Del Mar Retreat, Malibu",
+      "address": "72 Sunset Avenue, Los Angeles, California",
+      "bedroom": 2,
+      "bathroom": 2,
+      "sqft": 600,
+      "agentImg": "avt-7.jpg",
+      "agent": "Annette Black",
+      "price": 250,
+      "isForSale": false,
+      "id": "6364"
+    },
+    {
+      "picName": "house-3.jpg",
+      "design": "villa",
+      "name": "Rancho Vista Verde, Santa Barbara",
+      "address": "33 Maple Street, San Francisco, California",
+      "bedroom": 4,
+      "bathroom": 2,
+      "sqft": 600,
+      "agentImg": "avt-5.jpg",
+      "agent": "Ralph Edwards",
+      "price": 5050,
+      "isForSale": true,
+      "id": "4d13"
+    },
+    {
+      "picName": "house-4.jpg",
+      "design": "house",
+      "name": "Sunset Heights Estate, Beverly Hills",
+      "address": "1040 Ocean, Santa Monica, California",
+      "bedroom": 3,
+      "bathroom": 2,
+      "sqft": 600,
+      "agentImg": "avt-8.jpg",
+      "agent": "Jacob Jones",
+      "price": 250,
+      "isForSale": false,
+      "id": "0e81"
+    },
+    {
+      "picName": "house-5.jpg",
+      "design": "office",
+      "name": "Coastal Serenity Cottage",
+      "address": "21 Hillside Drive, Beverly Hills, California",
+      "bedroom": 4,
+      "bathroom": 2,
+      "sqft": 600,
+      "agentImg": "avt-9.jpg",
+      "agent": "Kathryn Murphy",
+      "price": 7250,
+      "isForSale": true,
+      "id": "1b69"
+    },
+    {
+      "picName": "house-6.jpg",
+      "design": "studio",
+      "name": "Lakeview Haven, Lake Tahoe",
+      "address": "8 Broadway, Brooklyn, New York",
+      "bedroom": 3,
+      "bathroom": 2,
+      "sqft": 600,
+      "agentImg": "avt-6.jpg",
+      "agent": "Floyd Miles",
+      "price": 250,
+      "isForSale": false,
+      "id": "8bdb"
+    }
+  ],
+  "agents": [
+    {
+      "id": "1",
+      "picName": "agent-sm-1.jpg",
+      "name": "Jack Halow",
+      "prof": "CEO & Founder",
+      "phone": "1-333-345-6868",
+      "email": "hi.avitex@gmail.com",
+      "address": "101 E 129th St, East Chicago, IN 46312, US"
+    },
+    {
+      "id": "2",
+      "picName": "agent-sm-2.jpg",
+      "name": "John Smith",
+      "prof": "Property Manager",
+      "phone": "1-333-345-6868",
+      "email": "hi.avitex@gmail.com",
+      "address": "101 E 129th St, East Chicago, IN 46312, US"
+    },
+    {
+      "id": "3",
+      "picName": "agent-sm-3.jpg",
+      "name": "John Smith",
+      "prof": "Property Manager",
+      "phone": "1-333-345-6868",
+      "email": "hi.avitex@gmail.com",
+      "address": "101 E 129th St, East Chicago, IN 46312, US"
+    },
+    {
+      "id": "4",
+      "picName": "agent-sm-4.jpg",
+      "name": "Jack Halow",
+      "prof": "Real Estate Marketer",
+      "phone": "1-333-345-6868",
+      "email": "hi.avitex@gmail.com",
+      "address": "101 E 129th St, East Chicago, IN 46312, US"
     }
   ]
 }

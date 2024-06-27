@@ -25,7 +25,7 @@
 
       h1 {
         font-size: 56px;
-        line-height: 72px;
+        line-height: 50px;
         font-weight: 500;
         height: 120px;
         > span {
@@ -52,6 +52,7 @@
       }
 
       > p {
+        margin-top: -16px;
         font-size: 20px;
         color: $menu_link-color;
         line-height: 28px;
